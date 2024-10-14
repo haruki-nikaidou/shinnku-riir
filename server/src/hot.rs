@@ -25,7 +25,7 @@ pub struct TopCountItem {
 }
 
 impl HotRecord {
-    pub async fn insert(self, pg: PgPool) -> Result<()> {
+    pub async fn insert(self, pg: &PgPool) -> Result<()> {
         query!(
             r#"
             INSERT INTO hot_static (game_id, ip)
@@ -33,19 +33,19 @@ impl HotRecord {
             "#,
             self.game_id, self.ip
         )
-            .execute(&pg)
+            .execute(pg)
             .await?;
         Ok(())
     }
 
-    pub async fn get_top10(pg: PgPool) -> Result<Vec<TopCountItem>> {
+    pub async fn get_top10(pg: &PgPool) -> Result<Vec<TopCountItem>> {
         let res = query!(
             r#"
             SELECT game_id, count
             FROM top_10_downloaded_games
             "#,
         )
-            .fetch_all(&pg)
+            .fetch_all(pg)
             .await?
             .into_iter()
             .map(|row| TopCountItem {

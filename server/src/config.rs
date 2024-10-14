@@ -24,6 +24,8 @@ pub struct Config {
     pub port: u16,
     #[serde(default = "default_refresh_time")]
     pub refresh_time: i64,
+    #[serde(default = "default_redis")]
+    pub redis: String,
 }
 
 fn default_listen() -> String {
@@ -36,6 +38,9 @@ fn default_port() -> u16 {
 
 fn default_refresh_time() -> i64 {
     3600
+}
+fn default_redis() -> String {
+    "redis://127.0.0.1".to_string()
 }
 
 #[derive(Parser)]

@@ -5,10 +5,13 @@ use tokio::sync::RwLock;
 use serde::Deserialize;
 use anyhow::Result;
 use async_trait::async_trait;
+use chrono::NaiveDateTime;
+use redis::aio::MultiplexedConnection;
 use tokio::task::JoinSet;
 use tracing::error;
-use crate::drivers::DownloadProvider;
-use crate::file_list::EqualFileDownloadSource;
+use uuid::Uuid;
+use crate::drivers::{DownloadProviderStateTrait, LinkCachedProvider};
+use crate::file_list::{DownloadLinkCache, EqualFileDownloadSource, FileDownloadSources};
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct OnedriveConfig {
@@ -107,8 +110,27 @@ async fn get_my_od_id(access_token: &str) -> Result<String> {
 
 pub struct OnedriveDriver(HashMap<String, Arc<OnedriveState>>);
 
+fn create_source_token(file_id: String, drive_id: String) -> String {
+    format!("{}=:={}", drive_id, file_id)
+}
+fn parse_source_token(token: &str) -> (String, String) {
+    let mut iter = token.split("=:=");
+    (iter.next().unwrap().to_owned(), iter.next().unwrap().to_owned())
+}
+
 #[async_trait]
-impl DownloadProvider<OnedriveConfig> for OnedriveDriver {
+impl LinkCachedProvider for OnedriveDriver {
+    fn is_expired_time(create_time: NaiveDateTime) -> bool {
+        let now = chrono::Utc::now().naive_utc();
+        now > create_time + chrono::Duration::minutes(10)
+    }
+    async fn create_link_cache(&self, source_record: &FileDownloadSources) -> Result<DownloadLinkCache> {
+        todo!()
+    }
+}
+
+#[async_trait]
+impl DownloadProviderStateTrait<Vec<OnedriveConfig>> for OnedriveDriver {
     async fn get_download_link(&self, source_record: &EqualFileDownloadSource) -> Result<String> {
         todo!()
     }

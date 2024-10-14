@@ -20,10 +20,16 @@ pub struct EqualFileDownloadSource {
     pub cache_id: Option<Uuid>,
 }
 
+impl PartialEq for EqualFileDownloadSource {
+    fn eq(&self, other: &Self) -> bool {
+        self.provider == other.provider && self.token == other.token
+    }
+}
+
 pub struct FileDownloadSources(pub Uuid, pub Vec<EqualFileDownloadSource>);
 
 impl FileDownloadSources {
-    fn redis_key(uuid: Uuid) -> String {
+    pub(crate) fn redis_key(uuid: Uuid) -> String {
         format!("file_source:{}", uuid)
     }
 
@@ -46,6 +52,14 @@ impl FileDownloadSources {
         ).await?;
         Ok(())
     }
+
+    pub fn update_item<T: PartialEq + Sized>(list: &mut Vec<T>, item: T) {
+        let index = list.iter().position(|x| *x == item);
+        if let Some(i) = index {
+            list.remove(i);
+            list.push(item);
+        }
+    }
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -57,7 +71,7 @@ pub struct LinkCache {
 pub struct DownloadLinkCache(pub Uuid, pub LinkCache);
 
 impl DownloadLinkCache {
-    fn redis_key(uuid: Uuid) -> String {
+    pub(crate) fn redis_key(uuid: Uuid) -> String {
         format!("link_cache:{}", uuid)
     }
 
