@@ -1,6 +1,12 @@
-[package]
-name = "shinnku-riir"
-version = "0.1.0"
-edition = "2021"
+[workspace]
+members = ["server"]
+resolver = "2"
 
-[dependencies]
+
+
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
+opt-level = 3
