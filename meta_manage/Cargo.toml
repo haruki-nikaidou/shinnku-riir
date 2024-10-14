@@ -1,0 +1,15 @@
+[package]
+name = "meta_manage"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+meilisearch-sdk = "0.27.1"
+serde = {workspace = true}
+serde_json = {workspace = true}
+chrono = {workspace = true}
+tokio = {workspace = true}
+tracing = {workspace = true}
+anyhow = {workspace = true}
+uuid = {workspace = true}
+sqlx = {workspace = true}

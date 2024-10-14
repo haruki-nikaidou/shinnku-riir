@@ -1,9 +1,24 @@
 [workspace]
-members = ["server"]
+members = [ "meta_manage","server"]
 resolver = "2"
 
-
-
+[workspace.dependencies]
+serde = { version = "1.0.210", features = ["derive"] }
+serde_json = "1.0.128"
+chrono = {version = "0.4", features = ["serde"]}
+tokio = { version = "1.16", features = ["full"] }
+tracing = "0.1"
+anyhow = "1.0.89"
+uuid = { version = "1.10.0", features = ["v4", "v5", "serde"] }
+sqlx = {version = "0.8", features = [
+    "chrono",
+    "macros",
+    "sqlx-postgres",
+    "runtime-tokio",
+    "uuid",
+    "postgres",
+    "tls-rustls"
+]}
 
 [profile.release]
 lto = true
