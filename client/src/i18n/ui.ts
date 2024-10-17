@@ -15,6 +15,16 @@ const UiText: { [key: string]: Translation} = {
     cn: '下载',
     hk: '下載',
     tw: '下載'
+  },
+  'tutorial': {
+    cn: '新手教程',
+    hk: '新手教程',
+    tw: '新手教程'
+  },
+  'random_roll_one': {
+    cn: '试试手气',
+    hk: '試試手氣',
+    tw: '試試手氣'
   }
 }
 
