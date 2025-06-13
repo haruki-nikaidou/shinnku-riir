@@ -1,27 +1,18 @@
-[workspace]
-members = [ "meta_manage","server"]
-resolver = "2"
+[package]
+name = "shinnku-riir"
+version = "0.1.0"
+edition = "2024"
 
-[workspace.dependencies]
-serde = { version = "1.0.210", features = ["derive"] }
-serde_json = "1.0.128"
-chrono = {version = "0.4", features = ["serde"]}
-tokio = { version = "1.16", features = ["full"] }
-tracing = "0.1"
-anyhow = "1.0.89"
-uuid = { version = "1.10.0", features = ["v4", "v5", "serde"] }
-sqlx = {version = "0.8", features = [
-    "chrono",
-    "macros",
-    "sqlx-postgres",
-    "runtime-tokio",
-    "uuid",
-    "postgres",
-    "tls-rustls"
-]}
-
-[profile.release]
-lto = true
-codegen-units = 1
-panic = "abort"
-opt-level = 3
+[dependencies]
+kanau = "0.1.1"
+anyhow = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0.219", features = ["derive"] }
+compact_str = {version = "0.9.0", features = ["serde", "smallvec", "rkyv"]}
+smallvec = {version = "1.15.1", features = ["serde", "write", "const_generics", "const_new", "union"]}
+reqwest = {version = "0.12.20", features = ["json"]}
+tantivy = "0.24"
+axum = {version = "0.8.4"}
+rkyv = {version = "0.8.10"}
+thiserror = "2.0.12"
+serde_json = "1.0.140"

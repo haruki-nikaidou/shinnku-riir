@@ -1,8 +1,6 @@
-mod file_list;
 mod config;
-mod hot;
-mod drivers;
-mod api;
+mod file_meta;
+mod vfs;
 
 fn main() {
     println!("Hello, world!");
