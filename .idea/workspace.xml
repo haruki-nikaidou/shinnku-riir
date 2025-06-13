@@ -11,60 +11,13 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68bee1ca-2943-463a-81f9-b22d13d5613c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/config.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/file_meta.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vfs.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shinnku-riir.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shinnku-riir.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pnpm-lock.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/postcss.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/Tyranor.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/krkr.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/upsetgal-logo.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/vite.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/GameListItem/ItemIcon.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/GameListItem/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/fold-container/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/icons/KrKrIcon.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/icons/OnesIcon.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/icons/iconInterface.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/search/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/i18n/ui.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/i18n/utils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/(home)/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/vite-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tailwind.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tsconfig.node.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/vite.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/meta_manage/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/meta_manage/src/main.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/meta_manage/src/search.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrate/migrate_00001_create_hot_stat.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/api/download.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/api/hot_top.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/api/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/config.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/drivers/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/drivers/onedrive.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/file_list.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/hot.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main.rs" beforeDir="false" />
+    <list default="true" id="68bee1ca-2943-463a-81f9-b22d13d5613c" name="Changes" comment="restart">
+      <change afterPath="$PROJECT_DIR$/src/ai_search.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/file_list_loader.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/handlers/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vfs.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/vfs.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +69,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Cargo.Test vfs::tests::test_fs_tree_dir">
     <configuration name="Test vfs::tests::test_fs_tree" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="buildProfileId" value="test" />
       <option name="command" value="test --package shinnku-riir --bin shinnku-riir vfs::tests::test_fs_tree -- --exact" />
@@ -135,8 +88,26 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test vfs::tests::test_fs_tree_dir" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package shinnku-riir --bin shinnku-riir vfs::tests::test_fs_tree_dir -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.Test vfs::tests::test_fs_tree_dir" />
         <item itemvalue="Cargo.Test vfs::tests::test_fs_tree" />
       </list>
     </recent_temporary>
@@ -152,11 +123,24 @@
       <option name="presentableId" value="Default" />
       <updated>1749837527574</updated>
       <workItem from="1749837528682" duration="2473000" />
-      <workItem from="1749842397687" duration="6165000" />
+      <workItem from="1749842397687" duration="7837000" />
     </task>
+    <task id="LOCAL-00001" summary="restart">
+      <option name="closed" value="true" />
+      <created>1749848697607</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1749848697607</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="restart" />
+    <option name="LAST_COMMIT_MESSAGE" value="restart" />
   </component>
 </project>
