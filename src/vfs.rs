@@ -2,6 +2,7 @@ use crate::file_meta::FileMeta;
 use compact_str::CompactString;
 use std::collections::HashMap;
 use std::sync::Arc;
+use kanau::processor::Processor;
 use tokio::sync::RwLock;
 
 #[derive(Debug, Clone)]
@@ -128,6 +129,27 @@ impl FsTree {
                     children.insert(last_name.clone(), Arc::new(RwLock::new(node)));
                 }
             }
+        }
+    }
+}
+
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+pub struct AccessRequest {
+    pub path: String
+}
+
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+pub struct AccessResponse {
+    pub node: JsonFsNode,
+}
+
+impl Processor<AccessRequest, AccessResponse> for FsTree {
+    async fn process(&self, request: AccessRequest) -> AccessResponse {
+        let path = request.path.split('/').map(|s| CompactString::new(s)).collect::<Vec<_>>();
+        let node = self.get_node(&path).await.unwrap();
+        let node = node.read().await;
+        AccessResponse {
+            node: node.to_json().await,
         }
     }
 }
